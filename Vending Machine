@@ -1,0 +1,40 @@
+using System;
+
+namespace Vending Machine
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int num = int.Parse(Console.ReadLine());
+            int copyNum = num;
+            int sum = 0;
+
+
+            while (copyNum != 0)
+            {
+                int curentDigit = copyNum % 10;
+
+                int factorial = 1;
+
+                for (int i = 1; i <= curentDigit; i++)
+                {
+                    factorial *= i;
+
+                }
+                sum += factorial;
+                copyNum /= 10;
+            }
+
+            if (sum == num)
+            {
+                Console.WriteLine("yes");
+            }
+            else
+            {
+                Console.WriteLine("no");
+            }
+        }
+
+    }
+}
