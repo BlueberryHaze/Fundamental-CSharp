@@ -1,0 +1,101 @@
+using System;
+
+namespace Vacation 
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            double people = double.Parse(Console.ReadLine());
+            string type = Console.ReadLine();
+            string day = Console.ReadLine();
+            double total = 0.0;
+            double price = 0.0;
+
+            switch (type)
+            {
+                case "Students":
+
+                    switch (day)
+                    {
+
+                        case "Friday":
+                            price = 8.45;
+                            break;
+
+                        case "Saturday":
+                            price = 9.80;
+                            break;
+
+                        case "Sunday":
+                            price = 10.46;
+                            break;
+                    }
+                    break;
+
+                case "Business":
+
+                    switch (day)
+                    {
+
+                        case "Friday":
+                            price = 10.9;
+                            break;
+
+                        case "Saturday":
+                            price = 15.6;
+                            break;
+
+                        case "Sunday":
+                            price = 16;
+                            break;
+                    }
+                    break;
+
+                case "Regular":
+
+                    switch (day)
+                    {
+
+                        case "Friday":
+                            price = 15;
+                            break;
+
+                        case "Saturday":
+                            price = 20;
+                            break;
+
+                        case "Sunday":
+                            price = 22.5;
+                            break;
+                    }
+                    break;
+            }
+            if (people >= 30 && type == "Students")
+            {
+                total = people * price;
+                total = total - total * 0.15;
+                Console.WriteLine($"Total price: {total:f2}");
+            }
+            else if (people >= 100 && type == "Buisness")
+            {
+                people = people - 10;
+                total = people * price;
+                Console.WriteLine($"Total price: {total:f2}");
+            }
+            else if (type == "Regular" && people >= 10 && people <= 20)
+            {
+                total = people * price;
+                total = total - total * 0.05;
+                Console.WriteLine($"Total price: {total:f2}");
+            }
+            else
+            {
+                total = people * price;
+                Console.WriteLine($"Total price: {total:f2}");
+            }
+        }
+
+    }
+}
