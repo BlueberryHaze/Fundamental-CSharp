@@ -1,0 +1,42 @@
+using System;
+
+namespace Age
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int yearsOld = int.Parse(Console.ReadLine());
+            string age = string.Empty;
+
+            if (yearsOld >= 0 && yearsOld <= 2)
+            {
+                age = "baby";
+                Console.WriteLine(age);
+
+            }
+            else if (yearsOld >= 3 && yearsOld <= 13)
+            {
+                age = "child";
+                Console.WriteLine(age);
+
+            }
+            else if (yearsOld >= 14 && yearsOld <= 19)
+            {
+                age = "teenager";
+                Console.WriteLine(age);
+            }
+            else if (yearsOld >= 20 && yearsOld <= 65)
+            {
+                age = "adult";
+                Console.WriteLine(age);
+            }
+            else
+            {
+                age = "elder";
+                Console.WriteLine(age);
+            }
+
+        }
+    }
+}
