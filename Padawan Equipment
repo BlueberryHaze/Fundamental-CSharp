@@ -1,0 +1,32 @@
+using System;
+namespace TriangleOfNumbers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double ownMoney = double.Parse(Console.ReadLine());
+            int countStudent = int.Parse(Console.ReadLine());
+            double sabers = double.Parse(Console.ReadLine());
+            double robes = double.Parse(Console.ReadLine());
+            double belts = double.Parse(Console.ReadLine());
+            double total = 0;
+           
+
+           double freeBelts = Math.Floor(countStudent / 6.0);
+
+            total = sabers * (countStudent + Math.Ceiling(countStudent * 0.10)) + (robes * countStudent) + belts * (countStudent - freeBelts);
+
+            if (ownMoney >= total)
+            {
+                Console.WriteLine($"The money is enough - it would cost {total:f2}lv.");
+            }
+            else
+            {
+                Console.WriteLine($"Ivan Cho will need {(total - ownMoney):f2}lv more.");
+            }
+
+
+        }
+    }
+}
