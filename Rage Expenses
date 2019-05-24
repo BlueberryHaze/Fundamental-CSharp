@@ -1,0 +1,33 @@
+using System;
+namespace RageExpenses
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int lostGame = int.Parse(Console.ReadLine());
+
+            double headset = double.Parse(Console.ReadLine());
+            double mouse = double.Parse(Console.ReadLine());
+            double keyboard = double.Parse(Console.ReadLine());
+            double display = double.Parse(Console.ReadLine());
+
+            double headsetCount = 0;
+            Math.Floor(headsetCount = lostGame / 2);
+
+            double mouseCount = 0;
+            Math.Floor(mouseCount = lostGame / 3);
+
+            double keyboardCount = Math.Floor(mouseCount / 2);
+
+            double displayCount = Math.Floor(keyboardCount / 2);
+
+            double expenses = (headsetCount * headset) + (mouseCount * mouse) + (keyboardCount * keyboard) + (displayCount * display);
+
+            Console.WriteLine($"Rage expenses: {expenses:f2} lv.");
+
+
+
+        }
+    }
+}
