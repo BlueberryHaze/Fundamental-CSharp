@@ -1,0 +1,41 @@
+using System;
+using System.Numerics;
+
+namespace Snowballs
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int numberBalls = int.Parse(Console.ReadLine());
+
+            BigInteger winner = 0;
+            int showCount = 0;
+            int timeCount = 0;
+            BigInteger qualitiCount = 0;
+            BigInteger valueCount = 0;
+
+            for (int i = 0; i < numberBalls; i++)
+            {
+                int snowballShow = int.Parse(Console.ReadLine());
+                int snowballTime = int.Parse(Console.ReadLine());
+                int snowballQuality = int.Parse(Console.ReadLine());
+
+                BigInteger snowballValue = BigInteger.Pow((snowballShow / snowballTime), snowballQuality);
+
+                if (snowballValue > winner && snowballTime != 0)
+                {
+                    showCount = snowballShow;
+                    timeCount = snowballTime;
+                    qualitiCount = snowballQuality;
+                    valueCount = snowballValue;
+                    winner = snowballValue;
+                }
+
+            }
+
+            Console.WriteLine($"{showCount} : {timeCount} = {valueCount} ({qualitiCount})");
+
+        }
+    }
+}
