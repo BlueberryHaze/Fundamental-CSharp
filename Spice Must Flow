@@ -1,0 +1,31 @@
+using System;
+
+namespace SpiceMustFlow
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int spice = int.Parse(Console.ReadLine());
+            int leaving = 0;
+            int days = 0;
+
+
+            while (spice >= 100)
+            {
+               
+                leaving += spice;
+                leaving -= 26;                
+                spice -= 10;
+                days++;
+            }
+            if (leaving != 0)
+            {
+                leaving -= 26;
+            }
+            Console.WriteLine(days);
+            Console.WriteLine(leaving);
+
+        }
+    }
+}
