@@ -1,0 +1,33 @@
+using System;
+namespace WaterOverflow
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            int counter = 1;
+            int pourCounter = 0;
+            int tank = 255;
+
+            while (counter <= n)
+            {
+                int pour = int.Parse(Console.ReadLine());
+
+                if (pour <= tank)
+                {
+                    pourCounter += pour;
+                    tank -= pour;
+                }
+                else
+                {
+                    Console.WriteLine("Insufficient capacity!");
+                }
+
+
+                counter++;
+            }
+            Console.WriteLine(pourCounter);
+        }
+    }
+}
