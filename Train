@@ -1,0 +1,26 @@
+using System;
+
+
+namespace Train
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int wagons = int.Parse(Console.ReadLine());
+            int totalPeople = 0;
+
+            for (int i = 0; i < wagons; i++)
+            {
+                int people = int.Parse(Console.ReadLine());
+
+                totalPeople += people;
+
+                Console.Write(people + " "); 
+
+            }
+            Console.WriteLine();
+            Console.WriteLine(totalPeople);
+        }
+    }
+}
