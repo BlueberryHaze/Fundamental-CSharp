@@ -1,0 +1,67 @@
+using System;
+
+namespace Demo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int A = int.Parse(Console.ReadLine());
+            int B = int.Parse(Console.ReadLine());
+            int C = int.Parse(Console.ReadLine());
+
+            int firstNumber = 0;
+            int secondNumber = 0;
+            int thirdNumber = 0;
+
+            if (A >= B && A >= C)
+            {
+                firstNumber = A;
+            }
+            else if (B >= A && B >= C)
+            {
+                firstNumber = B;
+
+            }
+            else if (C >= A && C >= B)
+            {
+                firstNumber = C;
+            }
+
+            if (A > B && A <= C || A < B && A >= C)
+            {
+                secondNumber = A;
+            }
+            else if (B > A && B <= C || B < A && B >= C)
+            {
+                secondNumber = B;
+
+            }
+            else if (C > A && C <= B || C < A && C >= B)
+            {
+                secondNumber = C;
+            }
+
+            if (A <= B && A <= C)
+            {
+                thirdNumber = A;
+            }
+            else if (B <= A && B <= C)
+            {
+                thirdNumber = B;
+
+            }
+            else if (C <= A && C <= B)
+            {
+                thirdNumber = C;
+            }
+
+            Console.WriteLine(firstNumber);
+            Console.WriteLine(secondNumber);
+            Console.WriteLine(thirdNumber);
+
+        }
+
+    }
+}
